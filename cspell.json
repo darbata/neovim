@@ -1,0 +1,20 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "rubocop",
+    "erb",
+    "eruby",
+    "turbo",
+    "tailwind",
+    "pragprog",
+    "importmap",
+    "stimulus",
+    "Solid",
+    "omakase",
+    "nokogiri",
+    "puma",
+    "sqlite"
+  ],
+  "ignorePaths": ["db/schema.rb", "Gemfile.lock", "node_modules", "vendor"]
+}

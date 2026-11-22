@@ -1,0 +1,50 @@
+{
+  "validates": {
+    "prefix": "validates",
+    "body": ["validates :${1:attribute}, ${2:presence: true}"],
+    "description": "validates with options"
+  },
+  "validates length": {
+    "prefix": "vlen",
+    "body": ["validates :${1:attribute}, length: { maximum: ${2:255} }"],
+    "description": "validates length"
+  },
+  "validates numericality": {
+    "prefix": "vnum",
+    "body": ["validates :${1:attribute}, numericality: { greater_than_or_equal_to: ${2:0} }"],
+    "description": "validates numericality"
+  },
+  "validates format": {
+    "prefix": "vfmt",
+    "body": ["validates :${1:email}, format: { with: ${2:URI::MailTo::EMAIL_REGEXP} }"],
+    "description": "validates format"
+  },
+  "validates inclusion": {
+    "prefix": "vinc",
+    "body": ["validates :${1:attribute}, inclusion: { in: ${2:%w[]} }"],
+    "description": "validates inclusion"
+  },
+  "validates uniqueness case-insensitive": {
+    "prefix": "vuniq",
+    "body": ["validates :${1:attribute}, uniqueness: { case_sensitive: false }"],
+    "description": "validates uniqueness (case-insensitive)"
+  },
+  "validates comparison": {
+    "prefix": "vcomp",
+    "body": ["validates :${1:end_date}, comparison: { greater_than: :${2:start_date} }"],
+    "description": "validates comparison"
+  },
+  "custom validation": {
+    "prefix": "validate",
+    "body": [
+      "validate :${1:method_name}",
+      "",
+      "private",
+      "",
+      "def $1",
+      "  errors.add(:${2:attribute}, \"${3:is invalid}\") if $0",
+      "end"
+    ],
+    "description": "validate with a custom method"
+  }
+}
